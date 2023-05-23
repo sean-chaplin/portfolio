@@ -9,10 +9,9 @@
     </head>
     <body>
         <div id="nav">
-            <h1>Sean <span style="color:var(--primary)">Chaplin</span></h1>
-            <a href="#about">About</a>
-            <a href="#mywork">My Work</a>
-            <a href="#contactme">Contact Me</a>
+            <h1><a id="homelink" href="#">Sean <span style="color:var(--primary)">Chaplin</span></a></h1>
+            <a id="navlink" href="#about">About</a>
+            <a id="navlink" href="#contactme">Contact Me</a>
         </div>
         <div id="hero">
             <img id="profile" src="images/profile.png" />
@@ -38,11 +37,24 @@
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et gravida ante. Donec ultrices sapien est, porta auctor nibh pulvinar et.</p>
         </div>
-        <div id="mywork">
-            <h1>My Work</h1>
+        <div id="contactme">
+            <h1>Contact Me</h1>
+            <form action="https://formsubmit.co/sean.chaplin0@gmail.com" method="POST" onsubmit="alert('Email sent. Thank you!')">
+                <div id="info-section">
+                    <p>Name: *</p>
+                    <input type="text" id="name" placeholder="Your name..." required>
+                    <p>Email: *</p>
+                    <input type="email" id="email" placeholder="E.g. johndoe@email.com" required>
+                </div>
+                <div id="message-section">
+                    <p>Message: *</p>
+                    <textarea id="message" rows="4" placeholder="E.g. Hey! What's up?" style="resize: none;"></textarea>
+                    <button type="submit">Let's Talk!</button>
+                </div>
+            </form>
         </div>
         <div id="footer">
-            <a href="https://www.flaticon.com/free-icons/html5" title="html5 icons">Icons created by Freepik - Flaticon</a>
+            <p>Created by Sean Chaplin</p>
         </div>
     </body>
 </html>

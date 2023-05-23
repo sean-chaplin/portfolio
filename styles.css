@@ -2,9 +2,11 @@
 
 :root {
     --primary: #2e8034;
+    --primarydark: #007771;
+    --primarylight: #3cff00;
     --secondary: #212421;
     --background: #0f0f0f;
-    --highlight: #323632;
+    --highlight: #3f443f;
 }
 
 body {
@@ -14,9 +16,9 @@ body {
     background-color: var(--background);
     color: #ffffff;
     user-select: none;
-    background-image: url(images/tile.png);
-    background-size: 50px;
-    background-attachment: fixed;
+    height: 100%;
+    background-image: url("images/tile.png");
+    background-size: 40px;
 }
 
 h1 {
@@ -48,7 +50,7 @@ a {
     color: #ffffff;
 }
 
-a:hover {
+#navlink:hover {
     color: var(--primary);
     transition: 0.1s;
 }
@@ -90,6 +92,12 @@ a:hover {
 #hero h1 {
     color: var(--primary);
     margin: 0;
+}
+
+#homelink:hover {
+    cursor:pointer;
+    filter:brightness(0.6);
+    transition: 0.3s;
 }
 
 #hero #info p {
@@ -134,21 +142,81 @@ a:hover {
     max-width: 800px;
 }
 
-#mywork {
+#contactme {
     width: 100%;
-    height: 500px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#contactme h1 {
+    margin: 0;
+}
+
+#contactme form {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    justify-content: space-between;
+}
+
+#contactme form p {
+    font-size: 18px;
+}
+
+#contactme form input {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#contactme form textarea {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    max-height: 40%;
+}
+
+#contactme form button {
+    border-radius: 10px;
+    background-image: linear-gradient(to right, var(--primarydark), var(--primarylight));
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    min-height: 40px;
+}
+
+#contactme #info-section {
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#contactme #message-section {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#footer {
+    width: 100%;
+    height: 60px;
+    background-color: var(--secondary);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#footer {
-    width: 100%;
-    height: 80px;
-    background-color: var(--secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#footer p {
+    font-size: 18px;
+    color: var(--highlight);
+    font-weight: bold;
 }
 
 @keyframes float {
