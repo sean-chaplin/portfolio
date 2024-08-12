@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-    --primary: #2e8034;
-    --primarydark: #007771;
-    --primarylight: #3cff00;
-    --secondary: #212421;
+    --primary: #a02828;
+    --primarydark: #770038;
+    --primarylight: #ff5900;
+    --secondary: #262626;
     --background: #0f0f0f;
-    --highlight: #3f443f;
+    --highlight: #434343;
 }
 
 body {
@@ -29,19 +29,38 @@ p {
     font-size: 30px;
 }
 
-#nav {
+.nav {
     width: 100%;
     height: 80px;
     text-align: center;
     background-color: var(--secondary);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     position: fixed;
     border-bottom: 1px solid var(--highlight);
+    transition: 0.2s;
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        &__right {
+            display: flex;
+            width: 200px;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
 }
 
-#nav h1 {
+.nav.scrolled {
+    background: linear-gradient(to bottom, black, rgba(0,0,0,0));
+    border-bottom-width: 0px;
+}
+
+.nav h1 {
     font-size:30px;
 }
 
@@ -50,38 +69,41 @@ a {
     color: #ffffff;
 }
 
-#navlink:hover {
+.navlink:hover {
     color: var(--primary);
     transition: 0.1s;
 }
 
-#hero {
+.hero {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 750px;
-    padding-top: 80px;
+    padding-top: 75px;
 }
 
-#hero #spacer {
+.hero .spacer {
     width: 100px;
 }
 
-#hero #profile {
-    border-radius: 50%;
-    max-height: 500px;
+.hero .profile {
     animation: fadein 1s ease-in-out;
-    z-index: -1;
     background-color: var(--secondary);
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: 0 -110px;
+    z-index: -1;
 }
 
-#hero #info {
+.hero .info {
     animation: fadein 1s ease-in-out;
     z-index: -1;
 }
 
-#hero #info hr {
+.hero .info hr {
     height: 3px;
     border: none;
     background-color: var(--highlight);
@@ -89,37 +111,37 @@ a {
     margin-top: 40px;
 }
 
-#hero h1 {
+.hero h1 {
     color: var(--primary);
     margin: 0;
 }
 
-#homelink:hover {
+.homelink:hover {
     cursor:pointer;
     filter:brightness(0.6);
     transition: 0.3s;
 }
 
-#hero #info p {
+.hero .info p {
     margin: 0;
     margin-top: -10px;
 }
 
-#hero #icons {
+.hero .icons {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-#hero #icons img {
+.hero .icons img {
     max-height: 50px;
     border-radius: 0%;
     animation: float 4s ease-in-out infinite;
     z-index: -1;
 }
 
-#about {
-    background-color: var(--secondary);
+.about {
+    background: linear-gradient(to right, var(--background), var(--secondary), var(--background));
     width: 100%;
     height: 600px;
     display: flex;
@@ -128,21 +150,26 @@ a {
     flex-direction: column;
 }
 
-#about img {
-    max-height: 100px;
-    border-radius: 50%;
+.about img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  object-position: 0 -15px;
+  z-index: 0;
 }
 
-#about #heading {
+.about .heading {
     display: flex;
     align-items: center;
 }
 
-#about p {
+.about p {
     max-width: 800px;
+    font-size: x-large;
 }
 
-#contactme {
+.contactme {
     width: 100%;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -152,28 +179,28 @@ a {
     flex-direction: column;
 }
 
-#contactme h1 {
+.contactme h1 {
     margin: 0;
 }
 
-#contactme form {
+.contactme form {
     display: flex;
     flex-direction: row;
     width: 700px;
     justify-content: space-between;
 }
 
-#contactme form p {
+.contactme form p {
     font-size: 18px;
 }
 
-#contactme form input {
+.contactme form input {
     padding: 10px;
     border-radius: 10px;
     font-size: 20px;
 }
 
-#contactme form textarea {
+.contactme form textarea {
     font-size: 20px;
     padding: 10px;
     border-radius: 10px;
@@ -181,23 +208,24 @@ a {
     max-height: 40%;
 }
 
-#contactme form button {
+.contactme form button {
     border-radius: 10px;
     background-image: linear-gradient(to right, var(--primarydark), var(--primarylight));
+    border: none;
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     min-height: 40px;
 }
 
-#contactme #info-section {
+.contactme .info-section {
     min-height: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
 
-#contactme #message-section {
+.contactme .message-section {
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -206,7 +234,7 @@ a {
     margin-bottom: -1px;
 }
 
-#footer {
+.footer {
     width: 100%;
     height: 60px;
     background-color: var(--secondary);
@@ -215,7 +243,7 @@ a {
     justify-content: center;
 }
 
-#footer p {
+.footer p {
     font-size: 18px;
     color: var(--highlight);
     font-weight: bold;
@@ -245,117 +273,117 @@ a {
 }
 
 @media (orientation: portrait) {
-    #nav {
+    .nav {
         min-height: 150px;
         font-size: 40px;
     }
 
-    #homelink {
+    .homelink {
         font-size: 40px;
     }
 
-    #navlink {
+    .navlink {
         background-color: var(--highlight);
         padding: 25px;
         border-radius: 30px;
     }
 
-    #hero {
+    .hero {
         flex-direction: column;
         min-height: 1000px;
         padding-top: 400px;
         padding-bottom: 400px;
     }
 
-    #hero #profile {
+    .hero .profile {
         min-height: 700px;
     }
 
-    #hero #spacer {
+    .hero .spacer {
         min-height: 100px;
     }
 
-    #hero #info h1 {
+    .hero .info h1 {
         font-size: 90px;
     }
-    #hero #info p {
+    .hero .info p {
         font-size: 50px;
     }
 
-    #hero #info hr {
+    .hero .info hr {
         height: 6px;
         max-width: 50%;
     }
 
-    #hero #icons img {
+    .hero .icons img {
         min-height: 120px;
     }
 
-    #hero #info {
+    .hero .info {
         min-width: 70%;
         text-align: center;
     }
 
-    #about {
+    .about {
         min-height: 1400px;
     }
 
-    #about h1 {
+    .about h1 {
         font-size: 100px;
     }
 
-    #about p {
+    .about p {
         font-size: 50px;
     }
 
-    #contactme h1 {
+    .contactme h1 {
         font-size: 100px;
     }
 
-    #contactme form {
+    .contactme form {
         flex-direction: column;
         min-height: 1200px;
         justify-content: space-evenly;
     }
 
-    #contactme form p {
+    .contactme form p {
         font-size: 60px;
     }
 
-    #contactme form input {
-        font-size: 60px;
-        padding: 30px;
-        border-radius: 30px;
-    }
-
-    #contactme form textarea {
+    .contactme form input {
         font-size: 60px;
         padding: 30px;
         border-radius: 30px;
     }
 
-    #contactme form button {
+    .contactme form textarea {
+        font-size: 60px;
+        padding: 30px;
+        border-radius: 30px;
+    }
+
+    .contactme form button {
         font-size: 80px;
         padding-top: 40px;
         padding-bottom: 40px;
         border-radius: 50px;
     }
 
-    #contactme #message-section p {
+    .contactme .message-section p {
         margin-bottom: -20px;
     }
 
-    #contactme #message-section {
+    .contactme .message-section {
         min-width: 100%;
         height: 900px;
         justify-content: space-between;
     }
 
-    #footer {
+    .footer {
         min-height: 500px;
     }
 
-    #footer p {
+    .footer p {
         font-size: 90px;
         max-width: 70%;
         text-align: center;

@@ -2,59 +2,78 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" type="text/css" href="index.css" />
         <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
         <title>Sean Chaplin | Portfolio</title>
     </head>
     <body>
-        <div id="nav">
-            <h1><a id="homelink" href="#">Sean <span style="color:var(--primary)">Chaplin</span></a></h1>
-            <a id="navlink" href="#about">About</a>
-            <a id="navlink" href="#contactme">Contact Me</a>
-        </div>
-        <div id="hero">
-            <img id="profile" src="images/work-mugshot.png" />
-            <div id="spacer">
+        <div class="nav">
+            <div class="nav__links">
+                <h1><a class="homelink" href="#">Sean <span style="color:var(--primary)">Chaplin</span></a></h1>
+                <div class="nav__links__right">
+                    <a class="navlink" href="#about">About</a>
+                    <a class="navlink" href="#contactme">Contact Me</a>
+                </div>
             </div>
-            <div id="info">
+        </div>
+        <div class="hero">
+            <img class="profile" src="images/work-mugshot.png" />
+            <div class="spacer">
+            </div>
+            <div class="info">
                 <h1>Sean Chaplin</h1>
                 <p>Full-stack web developer.</p>
                 <hr>
-                <div id="icons">
+                <div class="icons">
                     <img src="images/icons/html5.png" />
                     <img src="images/icons/css-3.png" style="animation-delay: 0.5s;"/>
                     <img src="images/icons/js.png" style="animation-delay: 1s;" />
                     <img src="images/icons/atom.png" style="animation-delay: 1.5s;" />
+                    <img src="images/icons/py.png" style="animation-delay: 2.0s;" />
                 </div>
             </div>
         </div>
-        <div id="about">
-            <div id="heading">
+        <div class="about" id="about">
+            <div class="heading">
                 <h1>About Me</h1>
                 <div style="width:30px;"></div> <!--For spacing-->
                 <img src="images/work-mugshot.png" />
             </div>
-            <p>I've been programming since the age of 8, first in basic HTML and CSS, eventually learning JavaScript and then experimenting with various languages including: Python, C++, C and C#, before learning a couple JS frameworks such as: React and JQuery.</p>
+            <p>I've been programming since the age of 8, first in basic HTML and CSS, eventually learning JavaScript and then experimenting with various languages including: Python, C++, C and C#, before going on to learn my current primary framework React.
+              <br>
+              <br>
+              I have 1 year of professional experience working for a medium-sized software company in the role of: Junior Developer.</p>
         </div>
-        <div id="contactme">
+        <div class="contactme" id="contactme">
             <h1>Contact Me</h1>
             <form action="https://formsubmit.co/6da4d9219dd52b5784e847540749819f" method="POST">
-                <div id="info-section">
+                <div class="info-section">
                     <p>Name: *</p>
-                    <input type="text" id="name" name="name" placeholder="Your name..." required>
+                    <input type="text" class="name" name="name" placeholder="Your name..." required>
                     <p>Email: *</p>
-                    <input type="email" id="email" name="email" placeholder="E.g. johndoe@email.com" required>
+                    <input type="email" class="email" name="email" placeholder="E.g. johndoe@email.com" required>
                 </div>
-                <div id="message-section">
+                <div class="message-section">
                     <p>Message: *</p>
-                    <textarea id="message" name="message" rows="4" placeholder="E.g. Hey! What's up?" style="resize: none;"></textarea>
+                    <textarea class="message" name="message" rows="4" placeholder="E.g. Hey! What's up?" style="resize: none;"></textarea>
                     <button type="submit">Let's Talk!</button>
                 </div>
             </form>
         </div>
-        <div id="footer">
+        <div class="footer">
             <p>Created by Sean Chaplin</p>
         </div>
     </body>
+    <script>
+        document.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.nav');
+            
+            if (window.scrollY > 0) {
+              navbar.classList.add('scrolled');
+            } else {
+              navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </html>
